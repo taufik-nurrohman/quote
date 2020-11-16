@@ -14,12 +14,12 @@ const STRING_BOTH = '(?:' + STRING_DOUBLE + '|' + STRING_SINGLE + ')';
 const OBJECT_KEY = '[a-zA-Z_$][\\w]*';
 
 export const JSON = {
-    toObject: str => {
-        str = str.trim();
+    noQuote: str => {
+        let test = str.trim();
         // Convert JSON array and object
         if (
-            '{' === str.slice(0, 1) && '}' === str.slice(-1) ||
-            '[' === str.slice(0, 1) && ']' === str.slice(-1)
+            '{' === test.slice(0, 1) && '}' === test.slice(-1) ||
+            '[' === test.slice(0, 1) && ']' === test.slice(-1)
         ) {
             return str.replace(e('([{,]\\s*)"(' + OBJECT_KEY + ')"(\\s*:)'), '$1$2$3');
         }

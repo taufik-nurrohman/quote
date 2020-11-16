@@ -94,7 +94,7 @@ let node = "<foo bar='baz'>";
 console.log(HTML.singleQuote(test));
 ~~~
 
-### JSON.toObject(string)
+### JSON.noQuote(string)
 
 Remove quotes in JSON keys.
 
@@ -118,7 +118,7 @@ let test = `
 }
 `;
 
-console.log(singleQuote(JSON.toObject(test)));
+console.log(singleQuote(JSON.noQuote(test)));
 ~~~
 
 ### SGML.doubleQuote(string)
