@@ -3,8 +3,65 @@ Quote Utility
 
 > Convert double quote to single quote in a string and vice-versa.
 
+Usage
+-----
+
+### Browser
+
+~~~ .html
+<script type="module">
+import {toggleQuote} from '@taufik-nurrohman/quote/index.mjs';
+
+console.log(toggleQuote(`foo "bar" baz 'qux'`));
+</script>
+~~~
+
+### Module
+
+~~~ .js
+import {toggleQuote} from '@taufik-nurrohman/quote';
+
+console.log(toggleQuote(`foo "bar" baz 'qux'`));
+~~~
+
 Methods
 -------
+
+### doubleQuote(string)
+
+Convert single quotes to double quotes.
+
+~~~ .js
+import {doubleQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(doubleQuote(test));
+~~~
+
+### singleQuote(string)
+
+Convert double quotes to single quotes.
+
+~~~ .js
+import {singleQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(singleQuote(test));
+~~~
+
+### toggleQuote(string)
+
+Toggle quotes. Convert single quotes to double quotes, double quotes to single quotes.
+
+~~~ .js
+import {toggleQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(toggleQuote(test));
+~~~
 
 ### HTML.doubleQuote(string)
 
@@ -159,40 +216,4 @@ import {XML} from '@taufik-nurrohman/quote';
 let test = `<foo bar="baz">`;
 
 console.log(XML.singleQuote(test));
-~~~
-
-### toggleQuote(string)
-
-Toggle quotes. Convert single quotes to double quotes, double quotes to single quotes.
-
-~~~ .js
-import {toggleQuote} from '@taufik-nurrohman/quote';
-
-let test = `foo "bar" baz 'qux'`;
-
-console.log(toggleQuote(test));
-~~~
-
-### doubleQuote(string)
-
-Convert single quotes to double quotes.
-
-~~~ .js
-import {doubleQuote} from '@taufik-nurrohman/quote';
-
-let test = `foo "bar" baz 'qux'`;
-
-console.log(doubleQuote(test));
-~~~
-
-### singleQuote(string)
-
-Convert double quotes to single quotes.
-
-~~~ .js
-import {singleQuote} from '@taufik-nurrohman/quote';
-
-let test = `foo "bar" baz 'qux'`;
-
-console.log(singleQuote(test));
 ~~~
