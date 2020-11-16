@@ -158,7 +158,7 @@ import {XML} from '@taufik-nurrohman/quote';
 
 let test = `<foo bar="baz">`;
 
-console.log(XML.doubleQuote(test));
+console.log(XML.singleQuote(test));
 ~~~
 
 ### toggleQuote(string)
