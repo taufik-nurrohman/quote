@@ -1,5 +1,6 @@
 // Regular expression, because there is no DOM!
 export const doubleQuote = str => str.replace(/'/g, '"');
+export const noQuote = str => str.replace(/['"]/g, "");
 export const singleQuote = str => str.replace(/"/g, "'");
 export const toggleQuote = str => str.replace(/['"]/g, m0 => '"' === m0 ? "'" : '"');
 
@@ -21,7 +22,9 @@ export const JSON = {
             '{' === test.slice(0, 1) && '}' === test.slice(-1) ||
             '[' === test.slice(0, 1) && ']' === test.slice(-1)
         ) {
-            return str.replace(e('([{,]\\s*)"(' + OBJECT_KEY + ')"(\\s*:)'), '$1$2$3');
+            return str.replace(e('([{,]\\s*)("' + OBJECT_KEY + '")(\\s*:)'), (m0, m1, m2, m3) => {
+                return m1 + noQuote(m2) + m3;
+            });
         }
         return str;
     }
@@ -70,11 +73,13 @@ function convertNodes(str, quote, nodesToSkip) {
 
 export const HTML = {
     doubleQuote: str => convertNodes(str, '"', ['script', 'style', 'textarea']),
+    noQuote: str => {}, // TODO
     singleQuote: str => convertNodes(str, "'", ['script', 'style', 'textarea'])
 };
 
 export const SGML = {
     doubleQuote: str => convertNodes(str, '"'),
+    noQuote: str => {}, // TODO
     singleQuote: str => convertNodes(str, "'")
 };
 

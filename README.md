@@ -39,6 +39,18 @@ let test = `foo "bar" baz 'qux'`;
 console.log(doubleQuote(test));
 ~~~
 
+### noQuote(string)
+
+Remove quotes in string.
+
+~~~ .js
+import {noQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(noQuote(test));
+~~~
+
 ### singleQuote(string)
 
 Convert double quotes to single quotes.
@@ -106,6 +118,12 @@ let node = '<foo bar="baz">';
 
 console.log(HTML.doubleQuote(test));
 ~~~
+
+### HTML.noQuote(string)
+
+Remove quotes in HTML attribute&rsquo;s value where possible.
+
+**TODO**
 
 ### HTML.singleQuote(string)
 
@@ -187,6 +205,12 @@ let test = `<foo bar='baz'>`;
 
 console.log(SGML.doubleQuote(test));
 ~~~
+
+### SGML.noQuote(string)
+
+Remove quotes in SGML attribute&rsquo;s value where possible.
+
+**TODO**
 
 ### SGML.singleQuote(string)
 
