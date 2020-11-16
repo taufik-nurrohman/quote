@@ -38,13 +38,13 @@ let test = `
 <foo bar="'baz=\\"qux\\"' + qux">
 <foo bar='"baz=\\'qux\\'" + qux'>
 
-<script>
+<scr` + `ipt>
 let node = '<foo bar="baz">';
-</script>
+</scr` + `ipt>
 
-<script foo="bar > 0">
+<scr` + `ipt foo="bar > 0">
 let node = '<foo bar="baz">';
-</script>
+</scr` + `ipt>
 `;
 
 console.log(HTML.doubleQuote(test));
@@ -82,13 +82,13 @@ let test = `
 <foo bar="'baz=\\"qux\\"' + qux">
 <foo bar='"baz=\\'qux\\'" + qux'>
 
-<script>
+<scr` + `ipt>
 let node = "<foo bar='baz'>";
-</script>
+</scr` + `ipt>
 
-<script foo='bar > 0'>
+<scr` + `ipt foo='bar > 0'>
 let node = "<foo bar='baz'>";
-</script>
+</scr` + `ipt>
 `;
 
 console.log(HTML.singleQuote(test));
