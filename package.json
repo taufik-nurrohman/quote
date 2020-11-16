@@ -1,0 +1,26 @@
+{
+  "name": "@taufik-nurrohman/quote",
+  "description": "Convert double quote to single quote in a string and vice-versa.",
+  "version": "0.0.1",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taufik-nurrohman/quote.git"
+  },
+  "keywords": [
+    "converter",
+    "helper",
+    "quote",
+    "string",
+    "utility"
+  ],
+  "author": "Taufik Nurrohman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taufik-nurrohman/quote/issues"
+  },
+  "homepage": "https://taufik-nurrohman.github.io"
+}

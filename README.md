@@ -3,11 +3,15 @@ Quote Utility
 
 > Convert double quote to single quote in a string and vice-versa.
 
-Usage
------
+Methods
+-------
+
+### HTML.doubleQuote(string)
+
+Force HTML attribute&rsquo;s quote to double quote.
 
 ~~~ .js
-import {SGML} from 'quote';
+import {HTML} from '@taufik-nurrohman/quote';
 
 let test = `
 <foo bar="baz">
@@ -21,47 +25,146 @@ let test = `
 
 "foo 'bar'" baz
 'foo "bar"' baz
+
+<foo bar="baz > 0">
+<foo bar="baz < 0">
+
+<foo bar='baz > 0'>
+<foo bar='baz < 0'>
+
+<foo bar="'baz' + qux">
+<foo bar='"baz" + qux'>
+
+<foo bar="'baz=\\"qux\\"' + qux">
+<foo bar='"baz=\\'qux\\'" + qux'>
+
+<script>
+let node = '<foo bar="baz">';
+</script>
+
+<script foo="bar > 0">
+let node = '<foo bar="baz">';
+</script>
 `;
 
-console.log(SGML.doubleQuoteAttributes(test));
-console.log(SGML.singleQuoteAttributes(test));
+console.log(HTML.doubleQuote(test));
 ~~~
 
-Methods
--------
+### HTML.singleQuote(string)
+
+Force HTML attribute&rsquo;s quote to single quote.
+
+~~~ .js
+import {HTML} from '@taufik-nurrohman/quote';
+
+let test = `
+<foo bar="baz">
+<foo bar='baz'>
+
+<foo bar="baz 'qux'">
+<foo bar='baz "qux"'>
+
+"foo" bar
+'foo' bar
+
+"foo 'bar'" baz
+'foo "bar"' baz
+
+<foo bar="baz > 0">
+<foo bar="baz < 0">
+
+<foo bar='baz > 0'>
+<foo bar='baz < 0'>
+
+<foo bar="'baz' + qux">
+<foo bar='"baz" + qux'>
+
+<foo bar="'baz=\\"qux\\"' + qux">
+<foo bar='"baz=\\'qux\\'" + qux'>
+
+<script>
+let node = "<foo bar='baz'>";
+</script>
+
+<script foo='bar > 0'>
+let node = "<foo bar='baz'>";
+</script>
+`;
+
+console.log(HTML.singleQuote(test));
+~~~
 
 ### JSON.toObject(string)
 
 Remove quotes in JSON keys.
 
-**TODO**
+~~~ .js
+import {JSON, singleQuote} from '@taufik-nurrohman/quote';
 
-### SGML.doubleQuoteAttributes(string)
+let test = `
+{
+    "foo": "bar",
+    "baz:qux": 1,
+    "bar": ["foo", "bar", {
+        "$": 1,
+        "0": 1,
+        "a": 1,
+        "_": 1,
+        "$FooBar": 1,
+        "0FooBar": 1,
+        "aFooBar": 1,
+        "_FooBar": 1,
+    }]
+}
+`;
 
-Force HTML/SGML/XML attribute&rsquo;s quote to double quote.
+console.log(singleQuote(JSON.toObject(test)));
+~~~
 
-**TODO**
+### SGML.doubleQuote(string)
 
-### SGML.singleQuoteAttributes(string)
+~~~ .js
+import {SGML} from '@taufik-nurrohman/quote';
+~~~
 
-Force HTML/SGML/XML attribute&rsquo;s quote to single quote.
+### SGML.singleQuote(string)
 
-**TODO**
+### XML.doubleQuote(string)
+
+### XML.singleQuote(string)
 
 ### toggleQuote(string)
 
 Toggle quotes. Convert single quotes to double quotes, double quotes to single quotes.
 
-**TODO**
+~~~ .js
+import {toggleQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(toggleQuote(test));
+~~~
 
 ### doubleQuote(string)
 
 Convert single quotes to double quotes.
 
-**TODO**
+~~~ .js
+import {doubleQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(doubleQuote(test));
+~~~
 
 ### singleQuote(string)
 
 Convert double quotes to single quotes.
 
-**TODO**
+~~~ .js
+import {singleQuote} from '@taufik-nurrohman/quote';
+
+let test = `foo "bar" baz 'qux'`;
+
+console.log(singleQuote(test));
+~~~
