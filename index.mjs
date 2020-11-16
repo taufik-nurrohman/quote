@@ -38,7 +38,7 @@ const XML_TO_IGNORE = '<!\\[CDATA\\[[\\s\\S]*?\\]\\]>';
 
 function convertNodes(str, quote, nodesToSkip) {
     let nodesToSkipRegex = nodesToSkip && nodesToSkip.map(
-        nodeToSkip => '(<' + nodeToSkip + '(?:\\s[^>]*)?>)([\\s\\S]*?)(<\\/' + nodeToSkip + '>)'
+        nodeToSkip => '(<' + nodeToSkip + '(?:\\s(?:' + STRING_BOTH + '|[^>])*)?>)([\\s\\S]*?)(<\\/' + nodeToSkip + '>)'
     ).join('|');
     let nodes = SGML_COMMENT_REGEX + '|' + XML_TO_IGNORE;
     nodes += nodesToSkipRegex ? '|' + nodesToSkipRegex : "";
