@@ -125,13 +125,41 @@ console.log(singleQuote(JSON.toObject(test)));
 
 ~~~ .js
 import {SGML} from '@taufik-nurrohman/quote';
+
+let test = `<foo bar='baz'>`;
+
+console.log(SGML.doubleQuote(test));
 ~~~
 
 ### SGML.singleQuote(string)
 
+~~~ .js
+import {SGML} from '@taufik-nurrohman/quote';
+
+let test = `<foo bar="baz">`;
+
+console.log(SGML.singleQuote(test));
+~~~
+
 ### XML.doubleQuote(string)
 
+~~~ .js
+import {XML} from '@taufik-nurrohman/quote';
+
+let test = `<foo bar='baz'>`;
+
+console.log(XML.doubleQuote(test));
+~~~
+
 ### XML.singleQuote(string)
+
+~~~ .js
+import {XML} from '@taufik-nurrohman/quote';
+
+let test = `<foo bar="baz">`;
+
+console.log(XML.doubleQuote(test));
+~~~
 
 ### toggleQuote(string)
 
