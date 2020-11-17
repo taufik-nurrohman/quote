@@ -6,17 +6,34 @@ Quote Utility
 Usage
 -----
 
-### Browser
+### Browser Module
 
 ~~~ .html
 <script type="module">
-import {toggleQuote} from '@taufik-nurrohman/quote/index.mjs';
+import {toggleQuote} from './@taufik-nurrohman/quote/index.mjs';
 
 console.log(toggleQuote(`foo "bar" baz 'qux'`));
 </script>
 ~~~
 
-### Module
+### Browser Native
+
+~~~ .html
+<script src="./@taufik-nurrohman/quote/index.js"></script>
+<script>
+console.log(toggleQuote(`foo "bar" baz 'qux'`));
+</script>
+~~~
+
+### CommonJS Module
+
+~~~ .js
+const {toggleQuote} = require('@taufik-nurrohman/quote');
+
+console.log(toggleQuote(`foo "bar" baz 'qux'`));
+~~~
+
+### ECMAScript Module
 
 ~~~ .js
 import {toggleQuote} from '@taufik-nurrohman/quote';
