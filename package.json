@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/taufik-nurrohman/quote/issues"
   },
-  "homepage": "https://taufik-nurrohman.github.io"
+  "homepage": "https://taufik-nurrohman.github.io",
+  "files": [
+    "index.cjs",
+    "index.mjs"
+  ]
 }
