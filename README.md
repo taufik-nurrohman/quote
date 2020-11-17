@@ -1,10 +1,19 @@
 Quote Utility
 =============
 
-> Convert double quote to single quote in a string and vice-versa.
+> Convert double quote to single quote in string and vice-versa.
 
 Usage
 -----
+
+### Browser
+
+~~~ .html
+<script src="./@taufik-nurrohman/quote/index.js"></script>
+<script>
+console.log(toggleQuote(`foo "bar" baz 'qux'`));
+</script>
+~~~
 
 ### Browser Module
 
@@ -12,15 +21,6 @@ Usage
 <script type="module">
 import {toggleQuote} from './@taufik-nurrohman/quote/index.mjs';
 
-console.log(toggleQuote(`foo "bar" baz 'qux'`));
-</script>
-~~~
-
-### Browser Native
-
-~~~ .html
-<script src="./@taufik-nurrohman/quote/index.js"></script>
-<script>
 console.log(toggleQuote(`foo "bar" baz 'qux'`));
 </script>
 ~~~
@@ -140,7 +140,26 @@ console.log(HTML.doubleQuote(test));
 
 Remove quotes in HTML attribute&rsquo;s value where possible.
 
-**TODO**
+~~~ .js
+import {HTML} from '@taufik-nurrohman/quote';
+
+let test = `
+<aaa bbb="ccc" ddd eee="fff">
+<aaa bbb='ccc' ddd eee='fff'>
+<aaa bbb=ccc ddd eee=fff>
+
+<aaa bbb="0ccc" ddd eee="0fff">
+<aaa bbb='0ccc' ddd eee='0fff'>
+
+<aaa bbb="ccc ccc" ddd eee="fff fff">
+<aaa bbb='ccc ccc' ddd eee='fff fff'>
+
+<aaa bbb="" ccc ddd="">
+<aaa bbb='' ccc ddd=''>
+`;
+
+console.log(HTML.noQuote(test));
+~~~
 
 ### HTML.singleQuote(string)
 
@@ -227,7 +246,14 @@ console.log(SGML.doubleQuote(test));
 
 Remove quotes in SGML attribute&rsquo;s value where possible.
 
-**TODO**
+~~~ .js
+import {SGML} from '@taufik-nurrohman/quote';
+
+let test = `<foo bar="baz">`;
+
+console.log(SGML.noQuote(test));
+~~~
+
 
 ### SGML.singleQuote(string)
 
