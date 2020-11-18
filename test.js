@@ -121,7 +121,7 @@ test('HTML.noQuote', t => {
 
 <aaa bbb="" ccc ddd="">
 <aaa bbb='' ccc ddd=''>
-`, `
+`), `
 <aaa bbb=ccc ddd eee=fff>
 <aaa bbb=ccc ddd eee=fff>
 <aaa bbb=ccc ddd eee=fff>
@@ -221,7 +221,7 @@ test('JSON.noQuote', t => {
   }],
   "baz:qux": 1
 }
-`, `
+`), `
 {
   foo: "bar",
   bar: ["foo", "bar", {
