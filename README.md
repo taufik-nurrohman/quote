@@ -1,7 +1,7 @@
 Quote Utility
 =============
 
-> Convert double quote to single quote in string and vice-versa.
+Convert double quote to single quote in string and vice-versa.
 
 Usage
 -----
@@ -102,35 +102,6 @@ import {HTML} from '@taufik-nurrohman/quote';
 let test = `
 <foo bar="baz">
 <foo bar='baz'>
-
-<foo bar="baz 'qux'">
-<foo bar='baz "qux"'>
-
-"foo" bar
-'foo' bar
-
-"foo 'bar'" baz
-'foo "bar"' baz
-
-<foo bar="baz > 0">
-<foo bar="baz < 0">
-
-<foo bar='baz > 0'>
-<foo bar='baz < 0'>
-
-<foo bar="'baz' + qux">
-<foo bar='"baz" + qux'>
-
-<foo bar="'baz=\\"qux\\"' + qux">
-<foo bar='"baz=\\'qux\\'" + qux'>
-
-<scr` + `ipt>
-let node = '<foo bar="baz">';
-</scr` + `ipt>
-
-<scr` + `ipt foo="bar > 0">
-let node = '<foo bar="baz">';
-</scr` + `ipt>
 `;
 
 console.log(HTML.doubleQuote(test));
@@ -144,18 +115,11 @@ Remove quotes in HTML attribute&rsquo;s value where possible.
 import {HTML} from '@taufik-nurrohman/quote';
 
 let test = `
-<aaa bbb="ccc" ddd eee="fff">
-<aaa bbb='ccc' ddd eee='fff'>
-<aaa bbb=ccc ddd eee=fff>
-
-<aaa bbb="0ccc" ddd eee="0fff">
-<aaa bbb='0ccc' ddd eee='0fff'>
-
-<aaa bbb="ccc ccc" ddd eee="fff fff">
-<aaa bbb='ccc ccc' ddd eee='fff fff'>
-
-<aaa bbb="" ccc ddd="">
-<aaa bbb='' ccc ddd=''>
+<aaa bbb="ccc">
+<aaa bbb=ccc>
+<aaa bbb="0ccc">
+<aaa bbb="ccc ccc">
+<aaa bbb="">
 `;
 
 console.log(HTML.noQuote(test));
@@ -171,35 +135,6 @@ import {HTML} from '@taufik-nurrohman/quote';
 let test = `
 <foo bar="baz">
 <foo bar='baz'>
-
-<foo bar="baz 'qux'">
-<foo bar='baz "qux"'>
-
-"foo" bar
-'foo' bar
-
-"foo 'bar'" baz
-'foo "bar"' baz
-
-<foo bar="baz > 0">
-<foo bar="baz < 0">
-
-<foo bar='baz > 0'>
-<foo bar='baz < 0'>
-
-<foo bar="'baz' + qux">
-<foo bar='"baz" + qux'>
-
-<foo bar="'baz=\\"qux\\"' + qux">
-<foo bar='"baz=\\'qux\\'" + qux'>
-
-<scr` + `ipt>
-let node = "<foo bar='baz'>";
-</scr` + `ipt>
-
-<scr` + `ipt foo='bar > 0'>
-let node = "<foo bar='baz'>";
-</scr` + `ipt>
 `;
 
 console.log(HTML.singleQuote(test));
@@ -212,22 +147,7 @@ Remove quotes in JSON keys.
 ~~~ js
 import {JSON, singleQuote} from '@taufik-nurrohman/quote';
 
-let test = `
-{
-    "foo": "bar",
-    "baz:qux": 1,
-    "bar": ["foo", "bar", {
-        "$": 1,
-        "0": 1,
-        "a": 1,
-        "_": 1,
-        "$FooBar": 1,
-        "0FooBar": 1,
-        "aFooBar": 1,
-        "_FooBar": 1,
-    }]
-}
-`;
+let test = `{"foo": "bar"}`;
 
 console.log(singleQuote(JSON.noQuote(test)));
 ~~~
