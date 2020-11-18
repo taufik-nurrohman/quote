@@ -2,7 +2,7 @@
 // If you want to add/remove something here, make sure to do it in `index.mjs` file first.
 ($$ => {
     const doubleQuote = str => str.replace(/'/g, '"');
-    const noQuote = str => str.replace(/['"]/g, "");
+    const noQuote = str => str.replace(/(\\['"])|['"]/g, '$1');
     const singleQuote = str => str.replace(/"/g, "'");
     const toggleQuote = str => str.replace(/['"]/g, m0 => '"' === m0 ? "'" : '"');
     function e(pattern, opt) {

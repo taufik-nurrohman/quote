@@ -1,5 +1,5 @@
 export const doubleQuote = str => str.replace(/'/g, '"');
-export const noQuote = str => str.replace(/['"]/g, "");
+export const noQuote = str => str.replace(/(\\['"])|['"]/g, '$1');
 export const singleQuote = str => str.replace(/"/g, "'");
 export const toggleQuote = str => str.replace(/['"]/g, m0 => '"' === m0 ? "'" : '"');
 
