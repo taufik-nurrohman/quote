@@ -239,6 +239,34 @@ test('JSON.noQuote', t => {
 `);
 });
 
+test('#5', t => {
+    t.is(HTML.singleQuote(`
+<head>
+  <script src="theme.js"/>
+</head>
+<body class="home">
+  <script>
+  let foo = '<bar baz="qux">';
+  </script>
+  <div class="body">
+    <main/>
+  </div>
+</body>
+`), `
+<head>
+  <script src='theme.js'/>
+</head>
+<body class='home'>
+  <script>
+  let foo = '<bar baz="qux">';
+  </script>
+  <div class='body'>
+    <main/>
+  </div>
+</body>
+`);
+});
+
 // `SGML` and `XML` are mostly just alias for `HTML`
 test.todo('SGML.doubleQuote');
 test.todo('SGML.noQuote');
