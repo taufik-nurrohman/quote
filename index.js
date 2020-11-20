@@ -19,7 +19,7 @@
     function convertNode(str, then, nodesToSkip) {
         let nodes = SGML_COMMENT_REGEX + '|' + XML_TO_IGNORE;
         let nodesToSkipRegex = nodesToSkip && nodesToSkip.map(
-            nodeToSkip => '<' + nodeToSkip + '(?:\\s(?:' + STRING_BOTH + '|[^>])*)?(?:\\/>|>[\\s\\S]*?<\\/' + nodeToSkip + '>)'
+            nodeToSkip => '<' + nodeToSkip + '(?:\\s(?:' + STRING_BOTH + '|[^>])*?)?(?:\\/>|>[\\s\\S]*?<\\/' + nodeToSkip + '>)'
         ).join('|');
         nodes += nodesToSkipRegex ? '|' + nodesToSkipRegex : "";
         nodes += '|' + SGML_TAG_REGEX; // Capture any SGML tag last!
