@@ -1,7 +1,7 @@
 {
   "name": "@taufik-nurrohman/quote",
   "description": "Convert double quote to single quote in string and vice-versa.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "index.js",
   "exports": {
     "import": "./index.mjs",
@@ -13,6 +13,10 @@
   ],
   "scripts": {
     "test": "ava"
+  },
+  "dependencies": {
+    "@taufik-nurrohman/is": ">=0.0.1",
+    "@taufik-nurrohman/pattern": ">=0.0.4"
   },
   "devDependencies": {
     "ava": "^3.13.0"
