@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@taufik-nurrohman/is": ">=0.0.1",
-    "@taufik-nurrohman/pattern": ">=0.0.4"
+    "@taufik-nurrohman/pattern": ">=0.0.5"
   },
   "devDependencies": {
     "ava": "^3.13.0"
