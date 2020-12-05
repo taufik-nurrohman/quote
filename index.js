@@ -46,7 +46,7 @@
         return convertNode(str, node => {
             return node.replace(toPattern('=' + STRING_BOTH), m0 => {
                 if ('=' + quote === m0.slice(0, 2)) {
-                    return m0; // Skip!
+                    return m0;
                 }
                 return m0.replace(toPattern('"' === quote ? STRING_SINGLE : STRING_DOUBLE), (n0, n1, n2, n3) => {
                     return quote + toggleQuote(n2 || "") + quote;
