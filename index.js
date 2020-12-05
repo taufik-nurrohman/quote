@@ -27,7 +27,7 @@
             nodeToSkip => '<' + nodeToSkip + '(?:\\s(?:' + STRING_BOTH + '|[^>])*?)?(?:/>|>[\\s\\S]*?</' + nodeToSkip + '>)'
         ).join('|');
         nodes += nodesToSkipRegex ? '|' + nodesToSkipRegex : "";
-        nodes += '|' + SGML_TAG_REGEX; // Capture any SGML tag last!
+        nodes += '|' + SGML_TAG_REGEX;
         return str.replace(toPattern(nodes), node => {
             if ('<!--' === node.slice(0, 4) && '-->' === node.slice(-3)) {
                 return node;
