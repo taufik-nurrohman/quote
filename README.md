@@ -15,17 +15,7 @@ console.log(toggleQuote(`foo "bar" baz 'qux'`));
 </script>
 ~~~
 
-### Browser Module
-
-~~~ html
-<script type="module">
-import {toggleQuote} from './@taufik-nurrohman/quote/index.mjs';
-
-console.log(toggleQuote(`foo "bar" baz 'qux'`));
-</script>
-~~~
-
-### CommonJS Module
+### CommonJS
 
 ~~~ js
 const {toggleQuote} = require('@taufik-nurrohman/quote');
@@ -33,7 +23,7 @@ const {toggleQuote} = require('@taufik-nurrohman/quote');
 console.log(toggleQuote(`foo "bar" baz 'qux'`));
 ~~~
 
-### ECMAScript Module
+### ECMAScript
 
 ~~~ js
 import {toggleQuote} from '@taufik-nurrohman/quote';
