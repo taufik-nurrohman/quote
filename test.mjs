@@ -1,16 +1,7 @@
-const test = require('ava');
-const {
-    doubleQuote,
-    noQuote,
-    singleQuote,
-    toggleQuote,
-    HTML,
-    JSON,
-    SGML,
-    XML
-} = require('./index.js');
+import ava from 'ava';
+import {doubleQuote, noQuote, singleQuote, toggleQuote, HTML, JSON, SGML, XML} from './index.mjs';
 
-test('doubleQuote', t => {
+ava('doubleQuote', t => {
     t.is(doubleQuote(`aaa"`), `aaa"`);
     t.is(doubleQuote(`aaa'`), `aaa"`);
     t.is(doubleQuote(`aaa\\"`), `aaa\\"`);
@@ -18,7 +9,7 @@ test('doubleQuote', t => {
     t.is(doubleQuote(`'aaa"`), `"aaa"`);
 });
 
-test('noQuote', t => {
+ava('noQuote', t => {
     t.is(noQuote(`aaa"`), `aaa`);
     t.is(noQuote(`aaa'`), `aaa`);
     t.is(noQuote(`aaa\\"`), `aaa\\"`);
@@ -26,7 +17,7 @@ test('noQuote', t => {
     t.is(noQuote(`'aaa"`), `aaa`);
 });
 
-test('singleQuote', t => {
+ava('singleQuote', t => {
     t.is(singleQuote(`aaa"`), `aaa'`);
     t.is(singleQuote(`aaa'`), `aaa'`);
     t.is(singleQuote(`aaa\\"`), `aaa\\'`);
@@ -34,12 +25,12 @@ test('singleQuote', t => {
     t.is(singleQuote(`'aaa"`), `'aaa'`);
 });
 
-test('toggleQuote', t => {
+ava('toggleQuote', t => {
     t.is(toggleQuote(`foo "bar" baz 'qux'`), `foo 'bar' baz "qux"`);
     t.is(toggleQuote(`foo \\"bar" baz \\'qux'`), `foo \\'bar' baz \\"qux"`);
 });
 
-test('HTML.doubleQuote', t => {
+ava('HTML.doubleQuote', t => {
     t.is(HTML.doubleQuote(`
 <foo bar="baz">
 <foo bar='baz'>
@@ -107,7 +98,7 @@ let node = "<foo bar='baz'>";
 `);
 });
 
-test('HTML.noQuote', t => {
+ava('HTML.noQuote', t => {
     t.is(HTML.noQuote(`
 <aaa bbb="ccc" ddd eee="fff">
 <aaa bbb='ccc' ddd eee='fff'>
@@ -137,7 +128,7 @@ test('HTML.noQuote', t => {
 `);
 });
 
-test('HTML.singleQuote', t => {
+ava('HTML.singleQuote', t => {
     t.is(HTML.singleQuote(`
 <foo bar="baz">
 <foo bar='baz'>
@@ -205,7 +196,7 @@ let node = '<foo bar="baz">';
 `);
 });
 
-test('JSON.noQuote', t => {
+ava('JSON.noQuote', t => {
     t.is(JSON.noQuote(`
 {
   "foo": "bar",
@@ -239,7 +230,7 @@ test('JSON.noQuote', t => {
 `);
 });
 
-test('#5', t => {
+ava('#5', t => {
     t.is(HTML.singleQuote(`
 <head>
   <script src="theme.js"/>
@@ -268,8 +259,8 @@ test('#5', t => {
 });
 
 // `SGML` and `XML` are mostly just alias for `HTML`
-test.todo('SGML.doubleQuote');
-test.todo('SGML.noQuote');
-test.todo('SGML.singleQuote');
-test.todo('XML.doubleQuote');
-test.todo('XML.singleQuote');
+ava.todo('SGML.doubleQuote');
+ava.todo('SGML.noQuote');
+ava.todo('SGML.singleQuote');
+ava.todo('XML.doubleQuote');
+ava.todo('XML.singleQuote');

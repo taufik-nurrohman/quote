@@ -6,15 +6,6 @@ Convert double quote to single quote in string and vice-versa.
 Usage
 -----
 
-### Browser
-
-~~~ html
-<script src="./@taufik-nurrohman/quote/index.js"></script>
-<script>
-console.log(toggleQuote(`foo "bar" baz 'qux'`));
-</script>
-~~~
-
 ### CommonJS
 
 ~~~ js
@@ -39,8 +30,6 @@ Methods
 Convert single quotes to double quotes.
 
 ~~~ js
-import {doubleQuote} from '@taufik-nurrohman/quote';
-
 let test = `foo "bar" baz 'qux'`;
 
 console.log(doubleQuote(test));
@@ -51,8 +40,6 @@ console.log(doubleQuote(test));
 Remove quotes in string.
 
 ~~~ js
-import {noQuote} from '@taufik-nurrohman/quote';
-
 let test = `foo "bar" baz 'qux'`;
 
 console.log(noQuote(test));
@@ -63,8 +50,6 @@ console.log(noQuote(test));
 Convert double quotes to single quotes.
 
 ~~~ js
-import {singleQuote} from '@taufik-nurrohman/quote';
-
 let test = `foo "bar" baz 'qux'`;
 
 console.log(singleQuote(test));
@@ -75,8 +60,6 @@ console.log(singleQuote(test));
 Toggle quotes. Convert single quotes to double quotes, double quotes to single quotes.
 
 ~~~ js
-import {toggleQuote} from '@taufik-nurrohman/quote';
-
 let test = `foo "bar" baz 'qux'`;
 
 console.log(toggleQuote(test));
@@ -87,8 +70,6 @@ console.log(toggleQuote(test));
 Force HTML attribute&rsquo;s quote to double quote.
 
 ~~~ js
-import {HTML} from '@taufik-nurrohman/quote';
-
 let test = `
 <foo bar="baz">
 <foo bar='baz'>
@@ -102,8 +83,6 @@ console.log(HTML.doubleQuote(test));
 Remove quotes in HTML attribute&rsquo;s value where possible.
 
 ~~~ js
-import {HTML} from '@taufik-nurrohman/quote';
-
 let test = `
 <aaa bbb="ccc">
 <aaa bbb=ccc>
@@ -120,8 +99,6 @@ console.log(HTML.noQuote(test));
 Force HTML attribute&rsquo;s quote to single quote.
 
 ~~~ js
-import {HTML} from '@taufik-nurrohman/quote';
-
 let test = `
 <foo bar="baz">
 <foo bar='baz'>
@@ -135,8 +112,6 @@ console.log(HTML.singleQuote(test));
 Remove quotes in JSON keys.
 
 ~~~ js
-import {JSON, singleQuote} from '@taufik-nurrohman/quote';
-
 let test = `{"foo": "bar"}`;
 
 console.log(singleQuote(JSON.noQuote(test)));
@@ -145,8 +120,6 @@ console.log(singleQuote(JSON.noQuote(test)));
 ### SGML.doubleQuote(string)
 
 ~~~ js
-import {SGML} from '@taufik-nurrohman/quote';
-
 let test = `<foo bar='baz'>`;
 
 console.log(SGML.doubleQuote(test));
@@ -157,8 +130,6 @@ console.log(SGML.doubleQuote(test));
 Remove quotes in SGML attribute&rsquo;s value where possible.
 
 ~~~ js
-import {SGML} from '@taufik-nurrohman/quote';
-
 let test = `<foo bar="baz">`;
 
 console.log(SGML.noQuote(test));
@@ -168,8 +139,6 @@ console.log(SGML.noQuote(test));
 ### SGML.singleQuote(string)
 
 ~~~ js
-import {SGML} from '@taufik-nurrohman/quote';
-
 let test = `<foo bar="baz">`;
 
 console.log(SGML.singleQuote(test));
@@ -178,8 +147,6 @@ console.log(SGML.singleQuote(test));
 ### XML.doubleQuote(string)
 
 ~~~ js
-import {XML} from '@taufik-nurrohman/quote';
-
 let test = `<foo bar='baz'>`;
 
 console.log(XML.doubleQuote(test));
@@ -188,8 +155,6 @@ console.log(XML.doubleQuote(test));
 ### XML.singleQuote(string)
 
 ~~~ js
-import {XML} from '@taufik-nurrohman/quote';
-
 let test = `<foo bar="baz">`;
 
 console.log(XML.singleQuote(test));

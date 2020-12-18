@@ -1,12 +1,5 @@
-import {
-    isSet
-} from '@taufik-nurrohman/is';
-
-import {
-    token,
-    tokenGroup,
-    toPattern
-} from '@taufik-nurrohman/pattern';
+import {isSet} from '@taufik-nurrohman/is';
+import {token, tokenGroup, toPattern} from '@taufik-nurrohman/pattern';
 
 export const doubleQuote = str => str.replace(/'/g, '"');
 export const noQuote = str => str.replace(/(\\['"])|['"]/g, '$1');
