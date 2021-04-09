@@ -135,7 +135,6 @@ let test = `<foo bar="baz">`;
 console.log(SGML.noQuote(test));
 ~~~
 
-
 ### SGML.singleQuote(string)
 
 ~~~ js
