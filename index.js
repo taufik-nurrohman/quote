@@ -1,5 +1,5 @@
 const {isSet} = require('@taufik-nurrohman/is');
-const {token, tokenGroup, toPattern} = from('@taufik-nurrohman/pattern');
+const {token, tokenGroup, toPattern} = require('@taufik-nurrohman/pattern');
 
 const doubleQuote = str => str.replace(/'/g, '"');
 const noQuote = str => str.replace(/(\\['"])|['"]/g, '$1');
