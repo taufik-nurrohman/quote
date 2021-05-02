@@ -98,7 +98,7 @@ const XML = {
     singleQuote: str => convertNodeQuotes(str, "'")
 };
 
-Object.assign(exports || {}, {
+Object.assign(exports, {
     doubleQuote,
     noQuote,
     singleQuote,
