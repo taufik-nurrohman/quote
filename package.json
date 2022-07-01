@@ -2,12 +2,12 @@
   "author": "Taufik Nurrohman",
   "bugs": "https://github.com/taufik-nurrohman/quote/issues",
   "dependencies": {
-    "@taufik-nurrohman/is": "^0.1.2",
-    "@taufik-nurrohman/pattern": "^0.1.7"
+    "@taufik-nurrohman/is": "*",
+    "@taufik-nurrohman/pattern": "*"
   },
   "description": "Convert double quote to single quote in string and vice-versa.",
   "devDependencies": {
-    "ava": "^3.15.0"
+    "ava": "^4.3.0"
   },
   "exports": {
     "import": "./index.mjs",
@@ -35,5 +35,5 @@
   "scripts": {
     "test": "ava test.mjs"
   },
-  "version": "0.0.14"
+  "version": "1.0.0"
 }
